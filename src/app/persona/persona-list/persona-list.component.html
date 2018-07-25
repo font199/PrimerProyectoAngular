@@ -1,0 +1,45 @@
+<table class="table table-sm table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellido</th>
+      <th scope="col">Fecha de nacimiento</th>
+      <th scope="col">Mail</th>
+      <th scope="col">Sexo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let persona of personas" >
+      <th scope="row"(click)="onSelect(persona)">{{persona.id}}</th>
+      <td (click)="onSelect(persona)">{{persona.nombre}}</td>
+      <td (click)="onSelect(persona)">{{persona.apellido}}</td>
+      <td (click)="onSelect(persona)">{{persona.fechaNacimiento}}</td>
+      <td (click)="onSelect(persona)">{{persona.mail}}</td>
+      <td (click)="onSelect(persona)">{{persona.sexo}}</td>
+      <td>
+        <button type="button" class="button btn btn-primary btn-sm" (click)="print(persona)">Print</button>
+        <button type="button" class="button btn btn-danger btn-sm"  (click)="delete(content,persona)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">Atencion</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Estas seguro que quieres eliminar {{personaModal.nombre}} </p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-light" (click)="c('Close click')">Close</button>
+    <button type="button" class="btn btn-light" (click)="c('Delete click')">Delete</button>
+  </div>
+</ng-template>
+
+
+

@@ -1,0 +1,27 @@
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Código</th>
+      <th scope="col">Descripción</th>
+      <th scope="col">Aplicación</th>
+      <th scope="col">Tipo</th>
+      <th scope="col">Estado</th>
+      <th scope="col">Fecha alta</th>
+      <th scope="col">Usuario</th>
+      <th scope="col">Despliegue</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let tarea of tareas" (click)="onSelect(tarea)">
+      <th scope="row">{{tarea.codigo}}</th>
+      <td>{{tarea.descripcion}}</td>
+      <td>{{tarea.aplicacion}}</td>
+      <td>{{tarea.tipo}}</td>
+      <td>{{tarea.estado  | estadoTarea }}</td>
+      <td>{{tarea.fechaAlta}}</td>
+      <td>{{tarea.usuario}}</td>
+      <td>{{tarea.despliegue}}</td>
+    </tr>
+  </tbody>
+</table>
+<!--pre>{{tareas | json}}</pre-->
