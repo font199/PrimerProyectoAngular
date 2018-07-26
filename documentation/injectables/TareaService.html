@@ -875,18 +875,26 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/tarea/shared/tarea.service.ts:14</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/tarea/shared/tarea.service.ts:18</a></div>
                             </td>
                         </tr>
 
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Obtener todas las Tareas</p>
+</div>
 
+                            <div>
+                            </div>
                             <div class="io-description">
                                 <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
 
                             </div>
+                                <div class="io-description">
+                                    <p>mock de tareas</p>
+
+                                </div>
                     </td>
                 </tr>
             </tbody>
@@ -913,13 +921,16 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/tarea/shared/tarea.service.ts:18</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/tarea/shared/tarea.service.ts:27</a></div>
                             </td>
                         </tr>
 
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Obtener todas las Tareas </p>
+<p>(Petición GET a una api pública)</p>
+</div>
 
                             <div class="io-description">
                                 <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
@@ -951,13 +962,16 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/tarea/shared/tarea.service.ts:22</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/tarea/shared/tarea.service.ts:36</a></div>
                             </td>
                         </tr>
 
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Insertar una Tarea</p>
+<p>(Petición POST a una api pública)</p>
+</div>
 
                             <div class="io-description">
                                     <b>Parameters :</b>
@@ -1020,13 +1034,16 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/tarea/shared/tarea.service.ts:26</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/tarea/shared/tarea.service.ts:46</a></div>
                             </td>
                         </tr>
 
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Actualizar una Tarea</p>
+<p>(Petición PUT a una api pública)</p>
+</div>
 
                             <div class="io-description">
                                     <b>Parameters :</b>
@@ -1099,18 +1116,38 @@ export class TareaService {
 
   constructor(private http: HttpClient) { }
 
+  /**
+   * Obtener todas las Tareas
+   * @returns mock de tareas
+   */
   getTareas(){
     return TAREAS;
   }
 
+  /**
+   * Obtener todas las Tareas 
+   * 
+   * (Petición GET a una api pública)
+   */
   getTareasHttp() {
     return this.http.get&lt;TareaId[]&gt;(&#x27;/api/tareas&#x27;);
   }
 
+   /**
+   * Insertar una Tarea
+   * 
+   * (Petición POST a una api pública)
+   */
   insertarTareaHttp(tarea: Tarea) {
     return this.http.post(&#x60;/api/tareas&#x60;, tarea);
   }
 
+
+   /**
+   * Actualizar una Tarea
+   * 
+   * (Petición PUT a una api pública)
+   */
   updateTareaHttp(id: string, tarea: Tarea) {
     return this.http.put(&#x60;/api/tareas/${id}&#x60;, tarea);
   }

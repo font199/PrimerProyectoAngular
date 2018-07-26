@@ -872,7 +872,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/tarea/tarea.component.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/tarea/tarea.component.ts:14</a></div>
                             </td>
                         </tr>
 
@@ -911,13 +911,15 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/tarea/tarea.component.ts:23</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/tarea/tarea.component.ts:33</a></div>
                             </td>
                         </tr>
 
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Nos informa por consola de la tarea registrada.</p>
+</div>
 
                             <div class="io-description">
                                     <b>Parameters :</b>
@@ -927,6 +929,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -941,6 +944,10 @@
                                                     </td>
                                                     
 
+                                                        <td>
+                                                                <code><p>la tarea guardada del formulario</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -980,7 +987,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/tarea/tarea.component.ts:16</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/tarea/tarea.component.ts:18</a></div>
                             </td>
                         </tr>
 
@@ -1018,13 +1025,15 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/tarea/tarea.component.ts:19</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/tarea/tarea.component.ts:25</a></div>
                             </td>
                         </tr>
 
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>La tarea actual sera la tarea seleccionada de la lista</p>
+</div>
 
                             <div class="io-description">
                                     <b>Parameters :</b>
@@ -1034,6 +1043,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -1048,6 +1058,10 @@
                                                     </td>
                                                     
 
+                                                        <td>
+                                                                <code><p>la tarea seleccionada de la lista</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -1099,10 +1113,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/tarea/tarea.component.ts:11</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/tarea/tarea.component.ts:12</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>La Tarea actual </p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -1133,10 +1153,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/tarea/tarea.component.ts:12</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/tarea/tarea.component.ts:14</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>La lista de Tareas </p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -1156,7 +1182,9 @@ import { Tarea } from &#x27;./shared/tarea&#x27;;
 })
 export class TareaComponent implements OnInit {
 
+  /** La Tarea actual */
   tarea: Tarea;
+  /** La lista de Tareas */
   tareas: Tarea[];
 
   constructor() { }
@@ -1164,10 +1192,18 @@ export class TareaComponent implements OnInit {
   ngOnInit() {
   }
 
+  /**
+   * La tarea actual sera la tarea seleccionada de la lista
+   * @param tarea la tarea seleccionada de la lista
+   */
   onSelectTarea(tarea: Tarea){
     this.tarea &#x3D; tarea;
   }
 
+  /**
+   * Nos informa por consola de la tarea registrada.
+   * @param tarea la tarea guardada del formulario
+   */
   mostrarSuccess(tarea: Tarea){
     console.log(&#x60;Tarea ${tarea.codigo} registrada&#x60;);
     this.tarea &#x3D; null;

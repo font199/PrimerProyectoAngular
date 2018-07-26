@@ -890,7 +890,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/tarea/tarea-list/tarea-list.component.ts:16</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/tarea/tarea-list/tarea-list.component.ts:22</a></div>
                             </td>
                         </tr>
 
@@ -938,6 +938,8 @@
                         <code>tareas</code>
                     </td>
                     <td class="col-md-10">
+                        <div><p>Recibimos la lista de Tareas que nos envia TareaComponent</p>
+</div>
                             <p>
                             <em>Type:</em>    <code><a href="../classes/Tarea.html" target="_self" >Tarea[]</a></code>
 
@@ -946,7 +948,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/tarea/tarea-list/tarea-list.component.ts:14</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/tarea/tarea-list/tarea-list.component.ts:17</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -962,13 +964,15 @@
                         <code>notifyTarea</code>
                     </td>
                     <td class="col-md-10">
+                        <div><p>Enviamos a TareaComponent la Tarea seleccionada de la lista</p>
+</div>
                         <em><code>$event</code> type:</em>    <code><a href="../classes/Tarea.html" target="_self" >EventEmitter&lt;Tarea&gt;</a></code>
 
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/tarea/tarea-list/tarea-list.component.ts:15</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/tarea/tarea-list/tarea-list.component.ts:21</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -1003,13 +1007,16 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/tarea/tarea-list/tarea-list.component.ts:20</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/tarea/tarea-list/tarea-list.component.ts:31</a></div>
                             </td>
                         </tr>
 
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Se llama cuando se crea el componente</p>
+<p>Se hace la peticion </p>
+</div>
 
                             <div class="io-description">
                                 <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -1041,13 +1048,15 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/tarea/tarea-list/tarea-list.component.ts:29</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/tarea/tarea-list/tarea-list.component.ts:44</a></div>
                             </td>
                         </tr>
 
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Emite una notificacion de la tarea seleccionada al TareaComponent </p>
+</div>
 
                             <div class="io-description">
                                     <b>Parameters :</b>
@@ -1057,6 +1066,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -1071,6 +1081,10 @@
                                                     </td>
                                                     
 
+                                                        <td>
+                                                                <code><p>La tarea seleccionada de la lista</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -1122,7 +1136,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/tarea/tarea-list/tarea-list.component.ts:16</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/tarea/tarea-list/tarea-list.component.ts:22</a></div>
                             </td>
                         </tr>
 
@@ -1148,12 +1162,23 @@ import { TareaId } from &#x27;../shared/tarea-id&#x27;;
 })
 export class TareaListComponent implements OnInit {
   
+ /**
+   * Recibimos la lista de Tareas que nos envia TareaComponent
+   */
 @Input() tareas: Tarea[];
+ /**
+   * Enviamos a TareaComponent la Tarea seleccionada de la lista
+   */
 @Output() notifyTarea: EventEmitter&lt;Tarea&gt; &#x3D; new EventEmitter&lt;Tarea&gt;();
   obTareaService: any;
 
   constructor(private tareaService: TareaService) { }
 
+  /**
+   * Se llama cuando se crea el componente
+   * 
+   * Se hace la peticion 
+   */
   ngOnInit() {
     console.log(&#x60;OnInit&#x60;);
     // this.tareas &#x3D; this.tareaService.getTareas();
@@ -1163,6 +1188,10 @@ export class TareaListComponent implements OnInit {
   
   }
 
+  /**
+   * Emite una notificacion de la tarea seleccionada al TareaComponent 
+   * @param tarea La tarea seleccionada de la lista
+   */
   onSelect(tarea: Tarea){
     this.notifyTarea.emit(tarea);
   }

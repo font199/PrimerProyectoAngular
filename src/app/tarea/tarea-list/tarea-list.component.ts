@@ -11,12 +11,23 @@ import { TareaId } from '../shared/tarea-id';
 })
 export class TareaListComponent implements OnInit {
   
+ /**
+   * Recibimos la lista de Tareas que nos envia TareaComponent
+   */
 @Input() tareas: Tarea[];
+ /**
+   * Enviamos a TareaComponent la Tarea seleccionada de la lista
+   */
 @Output() notifyTarea: EventEmitter<Tarea> = new EventEmitter<Tarea>();
   obTareaService: any;
 
   constructor(private tareaService: TareaService) { }
 
+  /**
+   * Se llama cuando se crea el componente
+   * 
+   * Se hace la peticion 
+   */
   ngOnInit() {
     console.log(`OnInit`);
     // this.tareas = this.tareaService.getTareas();
@@ -26,6 +37,10 @@ export class TareaListComponent implements OnInit {
   
   }
 
+  /**
+   * Emite una notificacion de la tarea seleccionada al TareaComponent 
+   * @param tarea La tarea seleccionada de la lista
+   */
   onSelect(tarea: Tarea){
     this.notifyTarea.emit(tarea);
   }

@@ -3,6 +3,9 @@
 import { Tarea } from "./tarea";
 import { TareaId } from "./tarea-id";
 
+ /**
+  * Mock para simular las Tareas que tiene el Servidor
+  */
 export const TAREAS: TareaId[] = [
     { codigo: "TAR1", descripcion: "Creación componente tarea-list", aplicacion: "WorkFlowG", 
         tipo: "Feature", estado: "DES", fechaAlta: "2018/05/10", usuario: "Rul", 

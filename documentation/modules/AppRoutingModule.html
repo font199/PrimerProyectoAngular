@@ -773,6 +773,11 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &#x27;@angular/core&#x27;;
 import { Routes, RouterModule } from &#x27;@angular/router&#x27;;
 
+/**
+ * La ruta en blanco llama a TareaModule
+ * 
+ * La ruta localhost:4200/persona llama a PersonaModule
+ */
 const routes: Routes &#x3D; [
   { path: &#x27;&#x27;, loadChildren: &#x27;./tarea/tarea.module#TareaModule&#x27; },
   { path: &#x27;persona&#x27;, loadChildren: &#x27;./persona/persona.module#PersonaModule&#x27;},

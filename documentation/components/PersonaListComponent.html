@@ -899,7 +899,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/persona/persona-list/persona-list.component.ts:20</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/persona/persona-list/persona-list.component.ts:27</a></div>
                             </td>
                         </tr>
 
@@ -971,6 +971,8 @@
                         <code>personas</code>
                     </td>
                     <td class="col-md-10">
+                        <div><p>Recibimos la lista de Personas que nos envia PersonaComponent</p>
+</div>
                             <p>
                             <em>Type:</em>    <code><a href="../classes/Persona.html" target="_self" >Persona[]</a></code>
 
@@ -979,7 +981,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/persona/persona-list/persona-list.component.ts:17</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/persona/persona-list/persona-list.component.ts:20</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -995,13 +997,15 @@
                         <code>notifyPersona</code>
                     </td>
                     <td class="col-md-10">
+                        <div><p>Enviamos a PersonaComponent la Persona seleccionada de la lista</p>
+</div>
                         <em><code>$event</code> type:</em>    <code><a href="../classes/Persona.html" target="_self" >EventEmitter&lt;Persona&gt;</a></code>
 
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/persona/persona-list/persona-list.component.ts:18</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/persona/persona-list/persona-list.component.ts:24</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -1036,7 +1040,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/persona/persona-list/persona-list.component.ts:40</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/app/persona/persona-list/persona-list.component.ts:52</a></div>
                             </td>
                         </tr>
 
@@ -1116,13 +1120,16 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/persona/persona-list/persona-list.component.ts:24</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/persona/persona-list/persona-list.component.ts:36</a></div>
                             </td>
                         </tr>
 
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Se llama cuando el componente es creado</p>
+<p>Se hace la peticion </p>
+</div>
 
                             <div class="io-description">
                                 <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -1154,7 +1161,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/persona/persona-list/persona-list.component.ts:32</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/persona/persona-list/persona-list.component.ts:44</a></div>
                             </td>
                         </tr>
 
@@ -1223,7 +1230,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/persona/persona-list/persona-list.component.ts:36</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/persona/persona-list/persona-list.component.ts:48</a></div>
                             </td>
                         </tr>
 
@@ -1304,7 +1311,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/persona/persona-list/persona-list.component.ts:19</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/persona/persona-list/persona-list.component.ts:26</a></div>
                             </td>
                         </tr>
 
@@ -1338,7 +1345,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/persona/persona-list/persona-list.component.ts:20</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/persona/persona-list/persona-list.component.ts:27</a></div>
                             </td>
                         </tr>
 
@@ -1367,13 +1374,25 @@ import { NgIf } from &#x27;@angular/common&#x27;;
 
 export class PersonaListComponent implements OnInit {
 
+  /**
+   * Recibimos la lista de Personas que nos envia PersonaComponent
+   */
   @Input() personas: Persona[];
+  /**
+   * Enviamos a PersonaComponent la Persona seleccionada de la lista
+   */
   @Output() notifyPersona: EventEmitter&lt;Persona&gt; &#x3D; new EventEmitter&lt;Persona&gt;();
+
   obPersonaService: any;
   personaModal: Persona;
 
   constructor(private personaService: PersonaService, private router: Router, private modalService: NgbModal) { }
 
+  /**
+   * Se llama cuando el componente es creado
+   * 
+   * Se hace la peticion 
+   */
   ngOnInit() {
     //this.personas &#x3D; this.personaService.getPersonas();
     console.log(&#x60;OnInit&#x60;);

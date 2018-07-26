@@ -1,3 +1,6 @@
+/**
+ * Objeto Tarea
+ */
 export class Tarea {
     codigo: string;
     descripcion: string;

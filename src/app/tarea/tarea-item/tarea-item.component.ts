@@ -12,7 +12,13 @@ import { mailValidator } from '../../shared/validators/mailValidator';
 })
 export class TareaItemComponent implements OnInit {
 
+   /**
+   * La classe TareaComponent nos envia la Tarea seleccionada.
+   */
 @Input() tarea: TareaId;
+  /**
+   * Envia Tarea[] actualizado al TareaComponent.
+   */
 @Output() notify: EventEmitter<Tarea> = new EventEmitter<Tarea>();
   tareaForm: FormGroup;
 
@@ -21,12 +27,18 @@ estados = [
   {label: "Producción", value: "PROD"}
 ]
 
-
+/**
+ * Ponemos en blanco todos los campos del formulario
+ * @param tareaService instantacion del tareaService
+ */
 constructor(private tareaService: TareaService) {
   console.log('Constructor de tarea-item');
   this.tareaForm = new FormGroup({
+    /** El codigo es un parametro requerido */
     codigo: new FormControl('', Validators.required),
+    /** La descripcion es un parametro requerido */
     descripcion: new FormControl('',Validators.required),
+    /** El mail es validado con mailValidator */
     mail: new FormControl('',mailValidator),
     tipo: new FormControl(''),
     estadoTarea: new FormControl(''),
@@ -40,6 +52,11 @@ ngOnInit() {
   console.log('Init de tarea-item');
 }
 
+/**
+   * Se llama cada vez que se modifican los datos de entrada (Cuando seleccionamos una Tarea de la lista).
+   * 
+   * Actualizamos los campos del formulario con los de la Tarea seleccionada.
+   * */
 ngOnChanges(){
   console.log('Change de tarea-item');
   if(this.tarea && this.tarea.id){
@@ -55,6 +72,11 @@ ngOnChanges(){
   }
 }
 
+  /**
+   * Se llama cuando apretamos el boton de guardar.
+   * 
+   * Se inserta o se actualiza la Tarea introducida en el formulario en el Servidor
+   * */
 onSuccess() {
   console.log(this.tarea);
   let controls = this.tareaForm.controls;
@@ -82,6 +104,10 @@ onSuccess() {
   }
 }
 
+
+/**
+ * Pone todos los parametros del formulario en blanco
+ */
 onNew(){
   console.log('onNew');
   
